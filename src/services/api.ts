@@ -1,7 +1,7 @@
 // Servicio base para llamadas a la API protegida con JWT
 import axios from 'axios';
 
-const API_URL = 'http://localhost:8080'; // Cambia si tu backend usa otro puerto
+const API_URL = 'https://examenfinalback-1.onrender.com/'; // Cambia si tu backend usa otro puerto
 
 const api = axios.create({
   baseURL: API_URL,
