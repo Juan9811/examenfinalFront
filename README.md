@@ -1,94 +1,38 @@
 # Frontend - Sistema de Gestión de Profesores
 
-Este proyecto es un frontend moderno creado con React + TypeScript y Vite. Permite:
-- Login con JWT
-- Gestión de profesores (listar, crear, editar, eliminar)
-- Visualización de perfil de profesor
-- Consumo seguro del backend Spring Boot
+Este es el frontend de la aplicación de gestión de profesores, desarrollado en React + TypeScript + Vite.
 
-## Scripts principales
-- `npm run dev` — Inicia el servidor de desarrollo
-- `npm run build` — Compila para producción
-- `npm run preview` — Previsualiza la app compilada
+## 🚀 Despliegue
+- **Vercel:** [Enlace al frontend desplegado](https://examenfinal-front.vercel.app/login)
 
-## Configuración
-Asegúrate de tener el backend corriendo y actualiza la URL base de la API si es necesario en el código fuente.
+## 📦 Instalación local
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/Juan9811/examenfinalFront.git
+   ```
+2. Entra a la carpeta del frontend:
+   ```bash
+   cd FrontEnd
+   ```
+3. Instala dependencias:
+   ```bash
+   npm install
+   ```
+4. Ejecuta en modo desarrollo:
+   ```bash
+   npm run dev
+   ```
 
-## Estructura sugerida
-- `/src/components` — Componentes reutilizables
-- `/src/pages` — Vistas principales (Login, Profesores, Perfil)
-- `/src/services` — Lógica de consumo de API y autenticación
+## ⚙️ Variables de entorno
+Crea un archivo `.env` si necesitas configurar la URL del backend:
+```
+VITE_API_URL=https://examenfinalback-1.onrender.com
+```
+
+## 🖥️ Capturas y monitoreo
+- ![Login](![alt text](image.png))
+- ![Panel](![alt text](image-1.png))
+- [Panel de Vercel](![alt text](image-2.png))
 
 ---
-
-Desarrollado con Vite, React y TypeScript.
-
-# React + TypeScript + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- [Repositorio Backend](https://github.com/Juan9811/examenfinalBack)
