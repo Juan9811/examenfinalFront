@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { login } from '../services/auth';
+import { useAuth } from '../context/AuthContext';
 
 const Login: React.FC = () => {
   const [usuario, setUsuario] = useState('');
@@ -8,18 +9,17 @@ const Login: React.FC = () => {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const { setToken } = useAuth();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
     setLoading(true);
     
-    console.log('Intentando login con:', { usuario, password });
-    
     try {
       const result = await login(usuario, password);
-      console.log('Login exitoso:', result);
-      
+      // Guardar en el contexto de autenticación
+      setToken(result.token, result.rol);
       // Redirigir según el rol del usuario
       if (result.rol === 'ADMIN') {
         navigate('/profesores');
@@ -27,7 +27,6 @@ const Login: React.FC = () => {
         navigate('/perfil');
       }
     } catch (err) {
-      console.error('Error en login:', err);
       setError('Credenciales incorrectas');
     } finally {
       setLoading(false);

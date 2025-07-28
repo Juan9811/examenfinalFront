@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { logout, getRol } from '../services/auth';
+import { useAuth } from '../context/AuthContext';
 
 const Navbar: React.FC = () => {
   const navigate = useNavigate();
-  const rol = getRol();
+  const { role, logout } = useAuth();
 
   const handleLogout = () => {
     logout();
@@ -35,7 +35,7 @@ const Navbar: React.FC = () => {
             Sistema de Profesores
           </h3>
           <div className="flex align-center gap-2">
-            {rol === 'ADMIN' && (
+            {role === 'ADMIN' && (
               <Link 
                 to="/profesores" 
                 className="btn btn-secondary mr-2"
